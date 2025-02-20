@@ -16,7 +16,6 @@ public class ContaBanco {
         System.out.println("Tipo: " + this.tipo);
         System.out.println("Dono: " + this.nomeDono);
         System.out.println("Saldo: R$" + this.saldo);
-        System.out.println("Status: " + this.status);
     }
 
     public void abrirConta(String t) {
