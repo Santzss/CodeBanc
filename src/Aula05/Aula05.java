@@ -19,7 +19,8 @@ public class Aula05 {
             System.out.println("3 - depositar ");
             System.out.println("4 - sacar ");
             System.out.println("5 - pagamento mensal");
-            System.out.println("6 - sair");
+            System.out.println("6 - Dados");
+            System.out.println("7 - Sair");
             System.out.println("=================");
             int opcao = sc.nextInt();
 
@@ -49,7 +50,7 @@ public class Aula05 {
                 } else {
                     System.out.println("Nenhuma conta encontrada no sistema!");
                 }
-            } else if (opcao== 3) {
+            } else if (opcao == 3) {
                 if (p1 != null) {
                     System.out.println("Digite o valor do deposito: ");
                     float v = sc.nextFloat();
@@ -68,14 +69,42 @@ public class Aula05 {
                     System.out.println("Nenhuma conta encontrada no sistema! ");
                 }
             } else if (opcao == 5) {
-                if (p1 != null){
+                if (p1 != null) {
                     p1.pagarMensal();
                     p1.estadoAtual();
-                } else  {
+                } else {
                     System.out.println("Nenhuma conta encontrada no sistema!");
                 }
             } else if (opcao == 6) {
-                System.out.println("Obrigado, volte sempre!");
+                if (p1 != null) {
+                    p1.estadoAtual();
+                    System.out.println("O que deseja? ");
+                    System.out.println("1 - Trocar nome e Numero da conta / 2 - voltar para opções");
+                    int escolha = sc.nextInt();
+
+                    if (escolha == 1) {
+                        System.out.println("Nome antigo da conta: " + p1.getNomeDono());
+                        System.out.println("Numero antigo da conta: " + p1.getNumConta());
+                        sc.nextLine();
+
+                        System.out.println("Digite o novo nome: ");
+                        String nomeDono = sc.nextLine();
+                        p1.setNomeDono(nomeDono);
+
+                        System.out.println("Digite o novo numero da conta: ");
+                        int numConta = sc.nextInt();
+                        p1.setNumConta(numConta);
+
+                        System.out.println("Novo nome: " + p1.getNomeDono());
+                        System.out.println("Novo numero: " + p1.getNomeDono());
+                        p1.estadoAtual();
+
+                    } else {
+                        System.out.println("Voltando!");
+                    }
+                }
+            } else if (opcao == 7) {
+                System.out.println("Volte sempre!");
                 break;
             }
 
